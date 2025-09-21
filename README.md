@@ -17,12 +17,12 @@ O processo de inicialização é totalmente automatizado.
 
 **1. Clone o Repositório:**
 ```shell
-git clone <>
+git clone https://github.com/Henrique-Barbosaa/curriculo-form.git
 ```
 
 **2. Navegue até a Pasta do Projeto:**
 ```shell
-cd <nome-da-pasta-do-projeto>
+cd <local-onde-você-clonou-o-projeto>
 ```
 
 **3. Inicie o Ambiente Docker:**
@@ -43,6 +43,6 @@ Este comando irá construir as imagens, iniciar os contêineres e executar todos
     * **Porta:** `5432`
     * **Usuário:** `postgres`
     * **Senha:** `postgres`
-    * **Database:** `pg-db`
+    * **Database:** `postgres`
 
 Para desligar o ambiente, execute `docker compose down`.
