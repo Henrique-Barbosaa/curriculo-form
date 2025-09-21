@@ -34,3 +34,25 @@ document.addEventListener('DOMContentLoaded', function() {
         const mask = IMask(phoneInput, phoneMaskOptions);
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const fileInput = document.getElementById('arquivo');
+    
+    if (fileInput) {
+        fileInput.addEventListener('change', function() {
+            const maxSizeBytes = 1024 * 1024;
+            const errorDisplay = document.getElementById('arquivo-error');
+
+            if (this.files.length > 0) {
+                const file = this.files[0];
+
+                if (file.size > maxSizeBytes) {
+                    errorDisplay.textContent = 'Erro: O arquivo não pode ter mais de 1MB.';
+                    this.value = '';
+                } else {
+                    errorDisplay.textContent = '';
+                }
+            }
+        });
+    }
+});

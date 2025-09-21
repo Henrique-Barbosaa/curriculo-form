@@ -29,7 +29,28 @@ cd <local-onde-você-clonou-o-projeto>
 ```shell
 docker compose up -d --build
 ```
+
 Este comando irá construir as imagens, iniciar os contêineres e executar todos os scripts de setup (instalação de dependências, migrações de banco, etc.) automaticamente.
+
+**4. Aguarde a Inicialização Automática:**
+Na primeira execução, o ambiente irá instalar todas as dependências do Composer (PHP) e NPM (JS), configurar o arquivo `.env` e rodar as migrações do banco de dados. **Este processo pode levar alguns minutos.**
+
+Você pode acompanhar o progresso em tempo real com o comando:
+```shell
+docker compose logs -f application
+```
+O ambiente estará pronto quando os logs se estabilizarem e mostrarem que o servidor foi iniciado.
+
+
+**5. Inicializar Vite:**
+O servidor de desenvolvimento do Vite, que compila o CSS e o JavaScript em tempo real e permite o "autoreload", precisa ser iniciado em um processo separado.
+
+Abra um **novo terminal** na raiz do projeto e execute:
+```shell
+docker compose exec application npm run dev
+```
+
+**Pronto! A aplicação está rodando.**
 
 ---
 ## ઍ Acesso à Aplicação

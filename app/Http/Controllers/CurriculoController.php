@@ -46,7 +46,7 @@ class CurriculoController extends Controller
             'ip_visitante' => $request->ip(),
         ]);
         
-        Mail::to('admin@admin')->send(
+        Mail::to('admin@admin')->queue(
             new CurriculoMail($curriculo, 'Curriculo Recebido: ')
         );
 

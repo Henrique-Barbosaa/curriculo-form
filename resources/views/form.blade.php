@@ -96,6 +96,7 @@
                     <input type="file" id="arquivo" name="arquivo" required>
                     <span id="file-name" class="file-name-display">Nenhum arquivo selecionado</span>
                 </div>
+                <span id="arquivo-error" class="error-message"></span>
                 @error('arquivo')
                     <span class="error-message">{{ $message }}</span>
                 @enderror
