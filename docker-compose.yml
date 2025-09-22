@@ -40,7 +40,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     volumes:
-      - ./docker/db:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
     networks:
       - laravel_app
 
@@ -50,3 +50,4 @@ networks:
 
 volumes:
   postgres_data:
+    driver: local
