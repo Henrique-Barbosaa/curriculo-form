@@ -1,4 +1,4 @@
-# Projeto de Envio de Currículos - Teste de Desenvolvimento SESAP/RN
+# Projeto de Envio de Currículos
 
 Este repositório contém o código para a aplicação de envio de currículos. O ambiente de desenvolvimento está 100% conteinerizado com Docker.
 
@@ -22,7 +22,7 @@ git clone https://github.com/Henrique-Barbosaa/curriculo-form.git
 
 **2. Navegue até a Pasta do Projeto:**
 ```shell
-cd <local-onde-você-clonou-o-projeto>
+cd <local_onde_você_clonou_o_projeto>
 ```
 
 **3. Inicie o Ambiente Docker:**
@@ -32,7 +32,7 @@ docker compose up -d --build
 
 Este comando irá construir as imagens, iniciar os contêineres e executar todos os scripts de setup (instalação de dependências, migrações de banco, etc.) automaticamente.
 
-**4. Aguarde a Inicialização Automática:**
+**4. Aguarde a Inicialização Automática:**<br>
 Na primeira execução, o ambiente irá instalar todas as dependências do Composer (PHP) e NPM (JS), configurar o arquivo `.env` e rodar as migrações do banco de dados. **Este processo pode levar alguns minutos.**
 
 Você pode acompanhar o progresso em tempo real com o comando:
@@ -42,7 +42,7 @@ docker compose logs -f application
 O ambiente estará pronto quando os logs se estabilizarem e mostrarem que o servidor foi iniciado.
 
 
-**5. Inicializar Vite:**
+**5. Inicializar Vite:**<br>
 O servidor de desenvolvimento do Vite, que compila o CSS e o JavaScript em tempo real e permite o "autoreload", precisa ser iniciado em um processo separado.
 
 Abra um **novo terminal** na raiz do projeto e execute:
@@ -53,7 +53,19 @@ docker compose exec application npm run dev
 **Pronto! A aplicação está rodando.**
 
 ---
-## ઍ Acesso à Aplicação
+## 📧 Envio de E-mails Assíncronos (OPCIONAL)
+
+A aplicação está configurada para enviar e-mails de confirmação para os candidatos de forma assíncrona, utilizando o **sistema de Filas (Queues) do Laravel**. O email é enviado para minha Sandbox no Mailtrap, que configurei para receber os emails.
+
+Para que os emails sejam de fato enviados para o Mailtrap, **abra um novo terminal (diferente do que está rodando o Vite)** e execute o seguinte comando:
+```shell
+docker compose exec application php artisan queue:work
+```
+
+**Isso é algo OPCIONAL, caso queria ver as filas funcionando e os emails sendo de fato enviados para minha Sandbox no Mailtrap.**
+
+---
+## Acesso à Aplicação
 
 * **Aplicação Web (Formulário):** [**http://localhost:8000**](http://localhost:8000)
 

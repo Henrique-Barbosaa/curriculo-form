@@ -1,17 +1,11 @@
-# Ignorar o Git
 .git
 .gitignore
 
-# Ignorar o arquivo de ambiente local
 .env
 
-# Ignorar o arquivo de configuração do Docker
 .dockerignore
 
-# Ignorar as dependências do Composer e NPM
-# Esta é a parte mais importante!
 vendor
 node_modules
 
-# Ignorar os logs do Laravel
 storage/logs

@@ -181,9 +181,9 @@ button[type="submit"]:hover {
 }
 
 .error-message {
-    color: #dc2626; /* Vermelho escuro */
-    font-size: 1rem; /* Tamanho pequeno */
-    margin-top: 0.25rem; /* Pequeno espaço acima */
+    color: #dc2626;
+    font-size: 1rem;
+    margin-top: 0.25rem;
 }
 
 

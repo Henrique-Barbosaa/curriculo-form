@@ -7,16 +7,11 @@ use App\Models\Curriculo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
-class CurriculoController extends Controller
+class CurriculoController
 {
     public function index()
     {
         return view('form');
-    }
-
-    public function created()
-    {
-        return view('created');
     }
 
     public function store(Request $request)
